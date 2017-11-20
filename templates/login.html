@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<header class="w3-container w3-teal">
+  <h1 class = "w3-center">Login</h1>
+</header>
+
+<div class="w3-container  w3-margin-top" >
+{% for message in messages %}
+	  	<div class="w3-panel w3-red w3-display-container">
+	    	<span onclick="this.parentElement.style.display='none'"
+	    	class="w3-button w3-red w3-large w3-display-topright">&times;</span>
+	    	<h3>Erro!</h3>
+	    	<p>{{ message }}</p>
+	  	</div>
+	  	
+	{% endfor %}
+<form method ="POST" class="w3-center">
+	{% csrf_token %}
+
+	<h1></h1>
+	<div> {{ forms.as_p }}</div>
+
+<p>
+<button class="w3-button w3-section w3-teal w3-ripple"> Log in </button></p>
+
+</form>
+
+</div>
+
+</body>
+</html> 
